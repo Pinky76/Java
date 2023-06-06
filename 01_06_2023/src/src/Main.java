@@ -19,5 +19,18 @@ public class Main {
         p1.parent();
         Parent2 p2 = new Parent2();
         p2.parent();
+
+        int num =123456;
+        int reversed = 0;
+        while(num != 0) {
+
+            // get last digit from num
+            int digit = num % 10;
+            reversed = reversed * 10 + digit;
+
+            // remove the last digit from num
+            num /= 10;
+        }
+        System.out.println("reversed is"+reversed);
     }
 }
