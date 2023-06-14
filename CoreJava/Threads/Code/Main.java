@@ -1,7 +1,7 @@
 
 public class Main extends Thread{
     public void run(){
-        System.out.println("Implementing Threads extending Thread class :: inside run method:");
+        System.out.println("Implementing Threads extending Thread class :: inside run method ::");
         for(int i = 0 ; i <= 10; i++){
             System.out.print(i + " ");
         }
