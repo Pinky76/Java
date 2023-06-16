@@ -17,19 +17,16 @@ public class Main {
 
         // Create an ExecutorService with a fixed thread pool
         ExecutorService executorService = Executors.newFixedThreadPool(THREAD_COUNT);
-        System.out.println("Threads are"+executorService);
+//        System.out.println("Threads are"+executorService);
 
         // Divide the array into equal parts for each thread
         int partitionSize = ARRAY_SIZE / THREAD_COUNT;
         List<Callable<Integer>> tasks = new ArrayList<>();
         for (int i = 0; i < THREAD_COUNT; i++) {
             int startIndex = i * partitionSize;
-            System.out.println("StartIndex is"+ startIndex);
             int endIndex = (i + 1) * partitionSize;
-            System.out.println("EndIndex is"+ endIndex);
             Callable<Integer> task = new ArraySumTask(array, startIndex, endIndex);
             tasks.add(task);
-            System.out.println("tasks are"+task);
         }
 
         try {
@@ -37,6 +34,7 @@ public class Main {
             int sum = 0;
             for (Future<Integer> future : futures) {
                 sum += future.get();
+                System.out.println("sum is"+sum);
             }
             System.out.println("Sum: " + sum);
         } catch (Exception e) {
