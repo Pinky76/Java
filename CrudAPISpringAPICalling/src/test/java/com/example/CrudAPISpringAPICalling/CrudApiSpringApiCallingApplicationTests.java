@@ -32,7 +32,7 @@ class CrudApiSpringApiCallingApplicationTests {
 
 	@Test
 	public void testGetData() {
-		UserDetails userDetails = new UserDetails("srikar", "01-01-2022", "sagar","teksystems", "mani",90,"java");
+		UserDetails userDetails = new UserDetails("manasa", "01-01-2022", "Prem","teksystems", "mani",90,"java");
 		dataList.add(userDetails);
 
 		List<UserDetails> result = resourceAPI.getData("teksystems");
@@ -41,7 +41,7 @@ class CrudApiSpringApiCallingApplicationTests {
 
 	@Test
 	public void testAddData() {
-		UserDetails userDetails = new UserDetails("srikar", "01-01-2022", "sagar","teksystems", "mani",90,"java");
+		UserDetails userDetails = new UserDetails("Sai", "01-01-2022", "Prem","teksystems", "mani",90,"java");
 		resourceAPI.addData(userDetails);
 
 		Assertions.assertEquals(List.of(userDetails), dataList);
@@ -49,7 +49,7 @@ class CrudApiSpringApiCallingApplicationTests {
 
 	@Test
 	public void testDeleteData() {
-		UserDetails userDetails = new UserDetails("srikar", "01-01-2022", "sagar","teksystems", "mani",90,"java");
+		UserDetails userDetails = new UserDetails("SaiM", "01-01-2022", "Prem","teksystems", "mani",90,"java");
 		dataList.add(userDetails);
 
 		resourceAPI.deleteData(0);
@@ -59,10 +59,10 @@ class CrudApiSpringApiCallingApplicationTests {
 
 	@Test
 	public void testUpdateData() {
-		UserDetails userDetails = new UserDetails("srikar", "01-01-2022", "sagar","teksystems", "mani",90,"java");
+		UserDetails userDetails = new UserDetails("Manu", "01-01-2022", "Prem","teksystems", "mani",90,"java");
 		dataList.add(userDetails);
 
-		UserDetails updatedUserDetails = new UserDetails("manasa", "01-01-2022", "sagar","teksystems", "mani",90,"java");
+		UserDetails updatedUserDetails = new UserDetails("manasa", "01-02-2022", "sagar","teksystems", "mani",90,"java");
 		resourceAPI.updateData(0, updatedUserDetails);
 
 		Assertions.assertEquals(updatedUserDetails, dataList.get(0));
